@@ -1,0 +1,1 @@
+DB_URL = postgres://othman:123456@localhost:5432/fund
