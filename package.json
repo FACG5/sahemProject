@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "NODE_ENV=test node test/test.js | tap-spec",
-    "start": "nodemon src/index.js"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -23,7 +23,6 @@
     "tape": "^4.9.1"
   },
   "dependencies": {
-    "bcrypt": "^3.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
