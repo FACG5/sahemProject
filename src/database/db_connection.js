@@ -18,7 +18,7 @@ const options = {
   database: params.pathname.split('/')[1],
   user: username,
   password,
-  ssl: options.host !== 'localhost',
+  ssl: params.hostname !== 'localhost',
 };
 
 module.exports = new Pool(options);

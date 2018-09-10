@@ -1,0 +1,50 @@
+<section class="container">
+  <form class="" action="/signup" method="POST">
+    <h3>{{msg}}</h3>
+    <label for="name"> Name
+      <input type="text" name="name" id="fname" required>
+    </label>
+    <p id="fnamerr" class="errorValid"></p>
+    <label for="email">Email
+      <input type="email" name="email" id="email" required>
+    </label>
+    <p id="emailerr" class="errorValid"></p>
+    <label for="password">Password
+      <input type="password" name="pass" id="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+    </label>
+    <p id="passerr" class="errorValid"></p>
+    <label for="location">Location
+      <input type="text" name="location" id="location" required>
+    </label>
+    <p id="locationerr" class="errorValid"></p>
+    <label for="specification">Specification
+      <input type="text" name="spec" id="specification" required>
+    </label>
+    <p id="specificationerr" class="errorValid"></p>
+    <label for="occupation">occupation
+      <input type="text" name="occupation" id="occupation" required>
+    </label>
+    <p id="occupationerr" class="errorValid"></p>
+    <label for="linkedin">LinkedIn
+    <input type="text" name="linkedin" id="linkedin" required>
+    </label>
+    <p id="linkedinerr" class="errorValid"></p>
+    <label for="facebook">FaceBook
+    <input type="text" name="facebook" id="facebook" required>
+    </label>
+    <p id="facebookerr" class="errorValid"></p>
+    <label for="mobile">Mobile
+    <input type="tel" name="mobile" id="mobile" required>
+    </label>
+    <p id="mobileerr" class="errorValid"></p>
+    <label for="img">Image
+    <input type="text" name="img" id="img" required>
+    </label>
+    <p id="imgerr" class="errorValid"></p>
+    <label for="description">Description
+    <input type="text" name="description" id="description" required>
+    </label>
+    <p id="descriptionerr" class="errorValid"></p>
+    <input type="submit" name="adduser" value="Sgin Up" id="signup">
+  </form>
+</section>
