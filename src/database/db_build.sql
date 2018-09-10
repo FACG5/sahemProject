@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, projects, donation;
+DROP TABLE IF EXISTS users, projects, donation CASCADE;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
