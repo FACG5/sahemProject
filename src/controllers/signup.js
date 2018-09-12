@@ -8,31 +8,26 @@ exports.get = (req, res) => {
 
 exports.post = (req, response) => {
   const data = req.body;
-  const name = data.name;
-  const email = data.email;
-  const pass = data.pass;
-  const location = data.location;
-  const spec = data.spec;
-  const occupation = data.occupation;
-  const linkedin = data.linkedin;
-  const facebook = data.facebook;
-  const mobile = data.mobile;
-  const img = data.img;
-  const description = data.description;
+
+
+  const {
+    name, email, pass, location, spec, occupation, linkedin, facebook, mobile, img,
+    description,
+  } = data;
 
   checkUser(email, (err, result) => {
     if (err) {
       response.render('signup', { msg: 'error' });
-    } else if (name && email && pass && location && spec && occupation && linkedin && facebook && mobile && img && description) {
+    } else if (data) {
       hashpassword(pass, (error, hash) => {
         if (error) {
           response.render('signup', { msg: 'Error1' });
-        } else { 
+        } else {
           const obj = {
-            name, email, hash, location, spec, occupation, linkedin, facebook, mobile, img, description
+            name, email, hash, location, spec, occupation, linkedin, facebook, mobile, img, description,
           };
           addUser(obj, (errr, pass) => {
-            if (errr) { 
+            if (errr) {
               response.render('signup', { msg: 'This email already exists' });
             } else {
               response.render('home');
@@ -40,6 +35,6 @@ exports.post = (req, response) => {
           });
         }
       });
-    } 
+    }
   });
 };
