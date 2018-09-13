@@ -3,7 +3,7 @@ const checkUser = require('../database/queries/checkUser');
 const hashpassword = require('../utillity/hashpassword');
 
 exports.get = (req, res) => {
-  res.render('signup', { js: 'signup' });
+  res.render('signup', { js: 'signup', css: 'signup' });
 };
 
 exports.post = (req, response) => {

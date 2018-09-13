@@ -1,0 +1,74 @@
+
+h1{
+    text-align: center;
+    font-family: Roboto;
+
+}
+
+.msg{
+    text-align: center;
+    font-family: Roboto;
+    color: red;
+    
+}
+.containerr , .submitdiv{
+    /* display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(400px, 1fr) );
+    grid-gap:10px; */
+    margin:0 auto;
+    width:70%;
+}
+.c{
+    display: inline-block;
+    width: 45%;
+    margin:0 20px 0 0;
+
+}
+
+
+.c>.item>input[type=text], [type=email],[type=password],[type=tel],textarea {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #868686;
+    border-radius: 25px;
+    box-sizing: border-box;
+    
+}
+
+
+.c>.item>label{
+    display: inline-block;
+    width: 25%
+}
+
+.description{
+    margin-top:30px
+}
+
+.description label{
+    display: block;
+}
+
+.description textarea{
+    width:91%;
+    height: 100px;;
+}
+.submitdiv{
+    text-align: center;
+}
+#signup{
+    background-color: #00BFFF;
+    border-radius: 20px;
+    width:170PX;
+    height: 30PX;
+    font-family: Roboto;
+    font-size: 14pt
+
+}
+
+#signup:hover{
+    background-color: rgb(175, 186, 190);
+
+}
