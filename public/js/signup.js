@@ -34,7 +34,8 @@ email.addEventListener("focusout", checkEmail);
 
 
 adduser.addEventListener("submit", e => {
-  if (!checkFNam() || !checkEmail() || !checkPass() || !checkConfirmPw()) {
+  if (!checkFNam() || !checkEmail() || !checkConfirmPw()) {
+
     e.preventDefault();
   }
 });
