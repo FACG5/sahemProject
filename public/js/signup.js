@@ -32,8 +32,10 @@ const checkEmail = () => {
 fName.addEventListener("focusout", checkFNam);
 email.addEventListener("focusout", checkEmail);
 
+
 adduser.addEventListener("submit", e => {
   if (!checkFNam() || !checkEmail() || !checkConfirmPw()) {
+
     e.preventDefault();
   }
 });
