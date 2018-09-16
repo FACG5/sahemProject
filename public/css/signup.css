@@ -1,5 +1,5 @@
 
-h1{
+.title{
     text-align: center;
     font-family: Roboto;
 
@@ -12,39 +12,32 @@ h1{
     
 }
 .containerr , .submitdiv{
-    /* display: grid;
-    grid-template-columns: repeat( auto-fill, minmax(400px, 1fr) );
-    grid-gap:10px; */
     margin:0 auto;
     width:70%;
 }
-.c{
+.clm{
     display: inline-block;
     width: 45%;
     margin:0 20px 0 0;
-
 }
 
-
-.c>.item>input[type=text], [type=email],[type=password],[type=tel],textarea {
+.clm>.item>input[type=text], [type=email],[type=password],[type=tel],textarea {
     width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #868686;
     border-radius: 25px;
-    box-sizing: border-box;
-    
+    box-sizing: border-box; 
 }
 
-
-.c>.item>label{
+.clm>.item>label{
     display: inline-block;
     width: 25%
 }
 
 .description{
-    margin-top:30px
+    margin-top:20px
 }
 
 .description label{
@@ -53,7 +46,7 @@ h1{
 
 .description textarea{
     width:91%;
-    height: 100px;;
+    height: 80px;;
 }
 .submitdiv{
     text-align: center;
@@ -65,10 +58,13 @@ h1{
     height: 30PX;
     font-family: Roboto;
     font-size: 14pt
-
 }
 
 #signup:hover{
     background-color: rgb(175, 186, 190);
-
 }
+.signup-help {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }

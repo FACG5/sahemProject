@@ -23,7 +23,7 @@ exports.post = (req, response) => {
         };
         addUser(obj, (errr, pass) => {
           if (errr) {
-            response.render('signup', { msg: 'This email already exists' });
+            response.render('signup', { msg: 'This email already exists' , css:'signup'});
           } else {
             response.render('home');
           }
