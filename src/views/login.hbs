@@ -1,16 +1,17 @@
-<section class="container">
-    <form method="POST" action="/login">
-        <h3>{{msg}}</h3>
-        <label for="email">Email:
-            <input id="email" type="email" name="email" required/>
-        </label>
-        <p id="emailErr" class="errorValid"></p>
-        <label for="password">Password:
-            <input id="password" type="password" required name="pass" />
-        </label>
-        <p id="passErr" class="errorValid"></p>
 
-        <input class="btn" type="submit" value="login" id="login" />
-        <a href="/signup">Sign up</a>
-    </form>
-</section>
+<div class="login-card">
+    <h1 class="title">Log-in</h1><br>
+     <h3 class ="msg">{{msg}}</h3><br>
+  <form method="POST" action="/login">
+      <input id="email" type="email" name="email" placeholder="Email" required/>
+     <p id="emailErr" class="errorValid"></p>
+    <input type="password" name="pass" id="password" placeholder="Password">
+     <p id="emailErr" class="errorValid"></p>
+    <input type="submit" name="login" class="login login-submit" id="login" value="login">
+  </form>
+    
+  <div class="login-help">
+    <a href="/signup">Sign up</a>
+  </div>
+</div>
+
