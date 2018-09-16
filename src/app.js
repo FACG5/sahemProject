@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set('view engine', 'hbs');
 app.use(cookieParser());
+app.use(upload.single('imageURL'));
 app.engine(
   'hbs',
   exphbs({
@@ -31,6 +32,5 @@ app.engine(
   }),
 );
 
-app.use(upload.single('imageURL'));
 app.use(controllers);
 module.exports = app;
