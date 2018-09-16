@@ -1,0 +1,70 @@
+
+.title{
+    text-align: center;
+    font-family: Roboto;
+
+}
+
+.msg{
+    text-align: center;
+    font-family: Roboto;
+    color: red;
+    
+}
+.containerr , .submitdiv{
+    margin:0 auto;
+    width:70%;
+}
+.clm{
+    display: inline-block;
+    width: 45%;
+    margin:0 20px 0 0;
+}
+
+.clm>.item>input[type=text], [type=email],[type=password],[type=tel],textarea {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #868686;
+    border-radius: 25px;
+    box-sizing: border-box; 
+}
+
+.clm>.item>label{
+    display: inline-block;
+    width: 25%
+}
+
+.description{
+    margin-top:20px
+}
+
+.description label{
+    display: block;
+}
+
+.description textarea{
+    width:91%;
+    height: 80px;;
+}
+.submitdiv{
+    text-align: center;
+}
+#signup{
+    background-color: #00BFFF;
+    border-radius: 20px;
+    width:170PX;
+    height: 30PX;
+    font-family: Roboto;
+    font-size: 14pt
+}
+
+#signup:hover{
+    background-color: rgb(175, 186, 190);
+}
+.signup-help {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }

@@ -2,7 +2,7 @@ const addUser = require('../database/queries/addUser');
 const hashpassword = require('../utillity/hashpassword');
 
 exports.get = (req, res) => {
-  res.render('signup', { js: 'signup' });
+  res.render('signup', { js: 'signup', css: 'signup' });
 };
 
 exports.post = (req, response) => {
@@ -23,7 +23,7 @@ exports.post = (req, response) => {
         };
         addUser(obj, (errr, pass) => {
           if (errr) {
-            response.render('signup', { msg: 'This email already exists' });
+            response.render('signup', { msg: 'This email already exists' , css:'signup'});
           } else {
             response.render('home');
           }
