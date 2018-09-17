@@ -1,0 +1,66 @@
+<main class='container'>
+  <div>
+    <h1 class='title'>Create Proposal</h1>
+    <form id='createproposal' enctype='multipart/form-data' method="POST" action="/createproposal">
+      <div class="fields">
+        <div class="fields-side">
+          <div class="row">
+            <div class="errName-span">
+              <span class='name-field'>Project Name</span>
+              <span class="err-msg-none err-msg err-name">This field is requird</span>
+            </div>
+            <input class="row-input" id='name' type="text" name="name">
+          </div>
+          <div class="row">
+            <div class="errName-span">
+              <span class='name-field'>Start of Campaign</span>
+              <span class="err-msg-none err-msg err-startCamp">Wrong Date</span>
+            </div>
+            <input min="{{now}}" id="startCamp" class="row-input" type="date" name="startCamp" value="{{now}}">
+          </div>
+          <div class="row">
+            <div class="errName-span">
+              <span class='name-field'>Need Fund</span>
+              <span class="err-msg-none err-msg err-fund"></span>
+            </div>
+            <input id="fund" class="row-input" type="text" name="fund">
+          </div>
+        </div>
+        <div class="fields-side">
+          <div class="row">
+            <div class="errName-span">
+              <span>Field</span>
+              <span class="err-msg-none err-msg err-field">This field is requird</span>
+            </div>
+            <input id="field" class="row-input" type="text" name="field">
+          </div>
+          <div class="row">
+            <div class="errName-span">
+              <span>End of Campaign</span>
+              <span class="err-msg-none err-msg err-endCamp">Date must be at least month after start Campaign</span>
+            </div>
+            <input min="{{afterMonth}}" id="endCamp" class="row-input" type="date" name="endCamp" value="{{afterMonth}}">
+          </div>
+          <div class="row">
+            <div class="errName-span">
+              <span>Image URL</span>
+              <span class="err-msg-none err-msg err-img">maximum size is 1 M</span>
+            </div>
+            <label class="imageLabel" for="imageURL">Choose a file</label>
+            <input id="imageURL" accept="image/*" type="file" name="imageURL">
+          </div>
+        </div>
+      </div>
+      <div class="abstract-field">
+        <div class="errName-span">
+          <span>abstract</span>
+          <span class="err-msg-none err-msg err-abstract">This field is requird</span>
+        </div>
+        <textarea id="abstract" name="abstract" cols="63" rows='8'></textarea>
+      </div>
+      <div class="submit-container">
+        <input class="submit" type="submit" value="CREATE">
+      </div>
+    </form>
+  </div>
+</main>
