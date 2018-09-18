@@ -3,16 +3,16 @@ const checkUser = require('../database/queries/checkUser');
 const { createCookie } = require('../utillity/authentication');
 
 exports.get = (request, response) => {
-  response.render('login', { js: 'login' });
+  response.render('login', { js: 'login', css: 'login' });
 };
 
 exports.post = (request, response) => {
-  const email = request.body.email;
-  const pass = request.body.pass;
-
+  const { email, pass } = request.body;
   checkUser(email, (err, result) => {
+    response.locals.js = 'login';
+    response.locals.css = 'login';
     if (err) {
-      response.render('login', { msg: 'error1' });
+      response.status(500).send('server error');
     } else if (result.length === 0) {
       response.render('login', { msg: 'This email not exist' });
     } else {
@@ -28,7 +28,7 @@ exports.post = (request, response) => {
                 'Set-Cookie',
                 `data=${token};httpOnly;Max-age=90000000`,
               );
-              response.render('home', { msg: 'Welcome in Sahem Site' });
+              response.render('home');
             }
           });
         }
