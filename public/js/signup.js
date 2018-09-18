@@ -1,16 +1,16 @@
+/* eslint-env browser */
+
 const fName = document.getElementById('fname');
 const email = document.getElementById('email');
-const password = document.getElementById('password');
 const adduser = document.getElementById('signup');
 const fnamerr = document.getElementById('fnamerr');
-const lnamerr = document.getElementById('lnamerr');
 const emailerr = document.getElementById('emailerr');
-const passerr = document.getElementById('passerr');
 
 
 const displayErr = (errElem, errMsg) => {
   errElem.textContent = errMsg;
 };
+
 const checkFNam = () => {
   if (fName.value === '') {
     displayErr(fnamerr, ' name is required');
