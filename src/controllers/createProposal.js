@@ -4,7 +4,7 @@ const createProposal = require('./../database/queries/createProposal');
 
 exports.get = (req, res) => {
   if (req.userAuth) {
-    res.render('createProposal', { js: 'createProposal', css: 'createProposal' });
+    res.render('createProposal', { js: 'createProposal', css: '/css/createProposal.css' });
   } else {
     res.redirect('/');
   }
@@ -19,11 +19,13 @@ exports.post = (req, res) => {
         .then((result) => {
           obj.img = result.data.link;
           return obj;
-        }).then(createProposal)
+        })
+        .then(createProposal)
         .then(() => {
           res.redirect('/');
         })
-        .catch(() => {
+        .catch((e) => {
+          console.error(e);
           res.status(503).send('503 Service Unavailable');
         });
     } else {
