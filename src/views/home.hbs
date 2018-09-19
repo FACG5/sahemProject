@@ -1,1 +1,68 @@
-<h1>Home Page</h1>
+
+
+<body>
+    <div class="container">
+      
+        {{>header}}
+
+        <main>
+            <div class="banner">
+                <img src="images/Creative-Development-Funding-Ideas-1024x615-1024x6152.jpg" />
+            </div>
+            <section class="popular">
+                <nav>
+                    <h2>popular projects</h2>
+                </nav>
+                <div class="content">
+                    {{#each popularprojects}}
+                        <div class="proposalcard">
+                            <a href="proposal/{{this.id}}"><img class="projectimg" src="{{this.img}}" /></a>
+                            <div class="meter">
+                                <span id="aa"  style="width: 75%"></span>
+                            </div>
+                            <h2>${{this.fund}}</h2>
+                            <hr />
+                            <h3>{{this.name}}</h3>
+                            <img class="userimg" src="images/user.png" />
+                            <a href="profile/{{this.userid}}">{{this.ownername}}</a>
+                            <br />
+                            <img class="locationimg" src="images/location.png" />
+                            <span>{{this.location}}</span>
+                        </div>
+                    {{/each}}
+                </div>
+            </section>
+            <section class="popular">
+                <nav>
+                    <h2>Recent projects</h2>
+                </nav>
+
+                <div class="content">
+
+                    {{#each popularprojects}}
+                        <div class="proposalcard">
+                            <a href="proposal/{{this.id}}"><img class="projectimg" src="{{this.img}}" /></a>
+                            <div class="meter">
+                                <span id="aa" style="width: 75%"></span>
+                            </div>
+                            <h2>${{this.fund}}</h2>
+                            <hr />
+                            <h3>{{this.name}}</h3>
+                            <img class="userimg" src="images/user.png" />
+                            <a href="profile/{{this.userid}}">{{this.ownername}}</a>
+                            <br />
+                            <img class="locationimg" src="images/location.png" />
+                            <span>{{this.location}}</span>
+                        </div>
+                    {{/each}}
+                </div>
+            </section>
+        </main>
+        <footer style="text-align:center;padding-top:20px;color:#00BFFF">
+            <h1 style="font-weight:500">AFAL&reg;</h1>
+        </footer>
+    </div>
+
+
+    
+</body>
