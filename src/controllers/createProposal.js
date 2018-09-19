@@ -19,11 +19,13 @@ exports.post = (req, res) => {
         .then((result) => {
           obj.img = result.data.link;
           return obj;
-        }).then(createProposal)
+        })
+        .then(createProposal)
         .then(() => {
           res.redirect('/');
         })
-        .catch(() => {
+        .catch((e) => {
+          console.error(e);
           res.status(503).send('503 Service Unavailable');
         });
     } else {
