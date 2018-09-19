@@ -4,12 +4,12 @@ DROP TABLE IF EXISTS users, projects, donation CASCADE;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL ,  
-    email VARCHAR(150) NOT NULL UNIQUE,
+    name VARCHAR(30) NOT NULL ,  
+    email VARCHAR(30) NOT NULL UNIQUE,
     pass TEXT NOT NULL,
-    location VARCHAR(100) NOT NULL,
-    spec VARCHAR(100) NOT NULL,
-    occupation VARCHAR(100) NOT NULL,
+    location VARCHAR(30) NOT NULL,
+    spec VARCHAR(30) NOT NULL,
+    occupation VARCHAR(30) NOT NULL,
     linkedin TEXT,
     facebook TEXT,
     mobile VARCHAR(20),
@@ -21,8 +21,8 @@ CREATE TABLE users (
 CREATE TABLE projects (
     id SERIAL PRIMARY KEY,
     user_id INTEGER,
-    name VARCHAR(500),
-    field VARCHAR(200),
+    name VARCHAR(30),
+    field VARCHAR(30),
     img TEXT,
     fund INTEGER NOT NULL,
     camp_start DATE,
@@ -36,6 +36,8 @@ CREATE TABLE donation (
     project_id INTEGER,
     amount INTEGER,
     iban text,
+    name VARCHAR(50),
+    email VARCHAR(30),
     date DATE DEFAULT NOW(),
     FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE
 );

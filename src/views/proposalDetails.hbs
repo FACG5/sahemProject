@@ -1,0 +1,51 @@
+<main class="wrapper">
+  <section class="main">
+    <div class="userDetails">
+      <img src="https://i.ebayimg.com/thumbs/images/g/6IIAAOSwiMRbGn2S/s-l96.jpg" class="userImg" alt="">
+      <span class="userName">{{obj.username}}</span>
+    </div>
+    <h3 class="title">{{obj.projectname}}</h3>
+    <p class="abstract">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis molestias quis modi quod inventore ullam quidem nam eveniet praesentium et! Vel commodi quae soluta cum odit consequuntur, illo porro consectetur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis molestias quis modi quod inventore ullam quidem nam eveniet praesentium et! Vel commodi quae soluta cum odit consequuntur, illo porro consectetur!
+      {{obj.abstract}}
+    </p>
+    <img class="projectImg" src="{{obj.img}}" alt="project image">
+  </section>
+  <section class="sidebar">
+    <span class="remain">Remain {{#getRemainDays obj.camp_end}}{{/getRemainDays}}  Days</span>
+    <div class="toGo">
+      <span>{{#getPercent obj.coalesce obj.fund}}{{/getPercent}}%</span>
+      <span>{{#getRemain obj.coalesce obj.fund}}{{/getRemain}}$ to go</span>
+    </div>
+    <progress value="{{#getPercent obj.coalesce obj.fund}}{{/getPercent}}" max="100"></progress>
+    <span class="total">Total Amount {{obj.fund}} $</span>
+    <input class="donateInput" type="text">
+    <button class="donateBtn">DONATE</button>
+  </section>
+</main>
+<section id="simpleModal" class="modal">
+  <div class="modal-content">
+    <span class="closeBtn">&times;</span>
+    <h2>Thanks for donation</h2>
+    <form method="POST" action="/donation">
+    <input class="none" name='id' type="text" value='{{obj.id}}'>
+    <input id='amount' class="none" name='amount' type="text" value=''>
+      <div class='modal-main'>
+        <label class='lab' for='iban'>
+          <span class='modal-feild'>Iban </span>
+          <input id='iban' name='iban' type="text" class='input' required>
+        </label>
+        <label class='lab' for="email">
+          <span class='modal-feild'>Email </span>
+          <input id='email' name='email' type="email" class='input'>
+        </label>
+        <label class='lab' for="name">
+          <span class='modal-feild'>Name </span>
+          <input id='name' name='name' type="text" class='input'>
+        </label>
+        <button id='btn'>Donate</button>
+      </div>
+    </form>
+  </div>
+<script src="/js/proposalDetails.js"></script>
+</section>
