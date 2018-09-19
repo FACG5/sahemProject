@@ -1,0 +1,26 @@
+
+        <main>
+            <section class="popular">
+                <nav>
+                    <h2>Search Results: {{getSearchedProjectsRes.length}} Results Found</h2>  
+                </nav>
+                <div class="content">
+                    {{#each getSearchedProjectsRes}}
+                        <div class="proposalcard">
+                            <a href="proposal/{{id}}"><img class="projectimg" src="{{this.img}}" /></a>
+                            <div class="meter">
+                                <span id="aa" style="width: 75%"></span>
+                            </div>
+                            <h2>${{this.fund}}</h2>
+                            <h3>{{this.name}}</h3>
+                            <img class="userimg" src="images/user.png" />
+                            <a href="profile/{{userid}}">{{this.ownername}}</a>
+                            <img class="locationimg" src="images/location.png" />
+                            <span>{{this.location}}</span>
+                        </div>
+                    {{/each}}
+                </div>
+            </section>
+        </main>
+
+

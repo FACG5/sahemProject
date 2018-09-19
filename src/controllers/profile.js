@@ -6,7 +6,7 @@ exports.get = (req, res) => {
     if (err) {
       res.render('error404');
     } else {
-      res.render('profile', { response, css: 'profile' });
+      res.render('profile', { response, css: '/css/profile.css' });
     }
   });
 };
