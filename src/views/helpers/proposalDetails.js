@@ -1,5 +1,5 @@
 module.exports = {
-  getPercent: (donationAmount, totalAmount) => (donationAmount / totalAmount) * (100 / 100),
+  getPercent: (donationAmount, totalAmount) => parseInt(((donationAmount / totalAmount) * (100 / 100)) * 100, 10),
   getRemain: (donationAmount, totalAmount) => totalAmount - donationAmount,
   getRemainDays: (date) => {
     const oneDay = 24 * 60 * 60 * 1000;

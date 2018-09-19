@@ -6,7 +6,7 @@ const proposal = require('./proposal');
 const donation = require('./donation');
 const createProposal = require('./createProposal');
 const isLogedIn = require('./../middleware/authentication');
-const profile = require('./profile')
+const profile = require('./profile');
 
 const router = express.Router();
 

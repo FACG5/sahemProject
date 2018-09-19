@@ -1,3 +1,4 @@
+/* eslint-env browser */
 
 const modal = document.getElementById('simpleModal');
 const modalBtn = document.getElementsByClassName('donateBtn')[0];
