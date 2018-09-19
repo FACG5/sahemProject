@@ -1,0 +1,97 @@
+
+nav,footer {
+    height: 40px;
+    background-color: white;
+    padding: 0 0 10px 10px;
+    font-family: Righteous;
+}
+nav a{
+    text-decoration:none;
+    color: #00BFFF;
+}
+
+.container {
+    width: 1000px;  
+    height: 100%;
+    margin: 0 auto;
+    background-color:white;
+}
+
+.sitename {
+    color: #00BFFF;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Righteous;
+    display: inline-block;
+    text-decoration:none;
+}
+
+.logo {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.banner {
+    height: 350px;
+
+}
+.banner img{
+    height: 100%;
+    width:100%;
+
+}
+nav li {
+    display: block;
+    display: inline-block;
+    color: #00BFFF;
+    font-family: Righteous;
+    margin-left: 20px;
+}
+
+.username{
+    font-weight: bold !important;
+}
+nav div {
+    float: right;
+    margin: 17px 20px 0;
+}
+
+.search input {
+    border: 2px solid #00BFFF;
+    width: 150px;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.search input::placeholder{
+      color:#00BFFF;
+  }
+
+
+
+  @media screen and (max-width: 580px) {
+
+  nav ul,
+  nav:active ul {
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    padding: 20px;
+    background: #6991ac;
+    right: 20px;
+    top: 60px;
+    border: 1px solid #fff;
+    border-radius: 10px 0 10px 2px;
+    width: 50%;
+  }
+
+  nav li {
+    text-align: center;
+    width: 100%;
+  }
+
+  nav:hover ul {
+    display: block;
+  }
+
+}

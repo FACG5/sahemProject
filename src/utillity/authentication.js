@@ -1,13 +1,8 @@
-const { parse } = require('cookie');
 const { sign, verify } = require('jsonwebtoken');
 require('env2')('config.env');
 
-const createCookie = (userId, cb) => {
-  const data = {
-    id: userId,
-  };
-
-  sign(data, process.env.SECRET, (err, result) => {
+const createCookie = (user, cb) => {
+  sign(user, process.env.SECRET, (err, result) => {
     if (err) {
       cb(err);
     } else {
@@ -22,15 +17,16 @@ const getTokenData = (data, cb) => {
       return cb(new TypeError());
     }
     cb(null, decoded);
+    return true;
   });
 };
 
 const authCheck = (request, cb) => {
-  if (!request.headers.cookie) {
+  if (!request.cookies) {
     return cb(new TypeError());
   }
 
-  const { data } = request.headers.cookie;
+  const { data } = request.cookies;
 
   if (!data) {
     return cb(new TypeError());
@@ -40,7 +36,9 @@ const authCheck = (request, cb) => {
       return cb(new TypeError());
     }
     cb(null, decoded);
+    return true;
   });
+  return true;
 };
 
 module.exports = { createCookie, getTokenData, authCheck };

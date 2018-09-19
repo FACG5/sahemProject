@@ -1,35 +1,54 @@
 const addUser = require('../database/queries/addUser');
 const hashpassword = require('../utillity/hashpassword');
-const validateForm = require('../utillity/validationSignup');
+const { createCookie } = require('../utillity/authentication');
 
 exports.get = (req, res) => {
-  res.render('signup', { js: 'signup', css: 'signup' });
+  res.render('signup', { js: 'js/signup.js', css: 'css/signup.css' });
 };
 
 exports.post = (req, response) => {
   const data = req.body;
-  const { pass } = data;
-  response.locals.js = 'signup';
-  response.locals.css = 'signup';
-  validateForm(data, (state, msg) => {
-    if (!state) {
-      response.render('signup', { msg });
-    } else {
-      hashpassword(pass, (error, hash) => {
-        if (error) {
-          response.render('signup', { msg: 'error' });
-        } else {
-          delete data.pass;
-          data.hash = hash;
-          addUser(data, (err) => {
-            if (err) {
-              response.render('signup', { msg: 'This email already exists' });
-            } else {
-              response.redirect('/');
-            }
-          });
-        }
-      });
-    }
-  });
+
+  const {
+    name, email, pass, location, spec, occupation, linkedin, facebook, mobile, img,
+    description,
+  } = data;
+
+  if (data) {
+    hashpassword(pass, (error, hash) => {
+      if (error) {
+        response.render('signup', { msg: error });
+      } else {
+        const obj = {
+          name,
+          email,
+          hash,
+          location,
+          spec,
+          occupation,
+          linkedin,
+          facebook,
+          mobile,
+          img,
+          description,
+        };
+        addUser(obj, (errr, user) => {
+          if (errr) {
+            response.render('signup', { msg: error });
+          } else {
+            createCookie({ id: user.id, name: user.name }, (err, token) => {
+              if (err) response.render('/login', { css: 'css/login.css' });
+              else {
+                response.setHeader(
+                  'Set-Cookie',
+                  `data=${token};httpOnly;Max-age=99999999999`,
+                );
+                response.redirect('/');
+              }
+            });
+          }
+        });
+      }
+    });
+  }
 };

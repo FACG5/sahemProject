@@ -18,7 +18,7 @@
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "nodemon": "^1.18.3",
+    "nodemon": "^1.18.4",
     "supertest": "^3.1.0",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1"

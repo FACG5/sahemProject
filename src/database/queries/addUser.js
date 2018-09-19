@@ -1,15 +1,35 @@
 const dbconnection = require('../db_connection');
 
 const addUser = (object, cb) => {
-  const sql = {
+  let sql = {
     text: 'INSERT INTO users(name, email, pass, location, spec, occupation, linkedin, facebook, mobile, img, description) VALUES ($1, $2, $3, $4, $5,$6, $7, $8, $9, $10, $11);',
-    values: [object.name, object.email, object.hash, object.location, object.spec, object.occupation, object.linkedin, object.facebook, object.mobile, object.img, object.description],
+    values: [object.name,
+      object.email,
+      object.hash,
+      object.location,
+      object.spec,
+      object.occupation,
+      object.linkedin,
+      object.facebook,
+      object.mobile,
+      object.img,
+      object.description],
   };
-  dbconnection.query(sql, (err, res) => {
-    if (err) {
-      cb(err);
+
+  dbconnection.query(sql, (inserterr) => {
+    if (inserterr) {
+      cb(inserterr);
     } else {
-      cb(null, res.rows);
+      sql = {
+        text: 'select * from users where email = $1',
+        values: [object.email],
+      };
+      dbconnection.query(sql, (selecterr, res) => {
+        if (selecterr) {
+          cb(selecterr);
+        }
+        cb(null, res.rows[0]);
+      });
     }
   });
 };

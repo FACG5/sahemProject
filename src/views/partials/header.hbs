@@ -1,0 +1,40 @@
+  <header>
+            <nav>
+                <img class="logo" src="images/sahem_share_logo.png" />
+                <a class="sitename" href="/">Sahem</a>
+
+                <div>
+                    <ul>
+                        {{#if authenticated}}
+                        <li>
+                            Hello:&nbsp;
+                            <a class="username" href="/profile/{{user.id}}">{{user.name}}</a>
+                        </li>
+                        <li>
+                            <a href="/CreateProposal">Create Proposal</a>
+                        </li>
+                         <li>
+                            <a href="/logout">Logout</a>
+                        </li>
+                        
+                        {{/if}}
+                        
+                        {{#unless authenticated}}
+                        <li>
+                            <a href="/login">Login</a>
+                        </li>
+                        <li>
+                            <a href="/signup">Signup</a>
+                        </li>
+                        {{/unless}}
+              
+        
+                        <li class="search">
+                            <form action="/search">
+                            <input id="searchtxt" type="text" name="projectname" placeholder="search" />
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
