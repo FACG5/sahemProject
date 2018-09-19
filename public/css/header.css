@@ -4,6 +4,7 @@ nav,footer {
     background-color: white;
     padding: 0 0 10px 10px;
     font-family: Righteous;
+   
 }
 nav a{
     text-decoration:none;
@@ -46,8 +47,12 @@ nav li {
     color: #00BFFF;
     font-family: Righteous;
     margin-left: 20px;
+    
 }
 
+nav ul{
+    margin-top:3px;
+}
 .username{
     font-weight: bold !important;
 }
