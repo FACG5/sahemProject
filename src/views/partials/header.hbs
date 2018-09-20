@@ -1,43 +1,56 @@
-  <header>
-            <nav>
-                <img class="logo" src="images/sahem_share_logo.png" />
-                <a class="sitename" href="/">Sahem</a>
+<header>
+    <img class="logo" src="/images/sahem_share_logo.png" />
+    <a class="sitename" href="/">Sahem</a>
+    <div class="nav">
+        <nav>
 
-                <div>
-                    <ul>
-                        {{#if authenticated}}
-                        <li>
-                            Hello:&nbsp;
-                            <a class="username" href="/profile/{{user.id}}">{{user.name}}</a>
-                        </li>
-                        <li>
-                            <a href="/CreateProposal">Create Proposal</a>
-                        </li>
-                         <li>
-                            <a href="/logout">Logout</a>
-                        </li>
-                        
-                        {{/if}}
-                        
-                        {{#unless authenticated}}
-                        <li>
-                            <a href="/login">Login</a>
-                        </li>
-                        <li>
-                            <a href="/signup">Signup</a>
-                        </li>
-                        {{/unless}}
-              
-        
-                        <li class="search">
-                            <form action="/search">
-                            <input id="searchtxt" type="text" name="projectname" placeholder="search By Name" />
-                            </form>
-                        </li>
-                        <li>
-                            <button><a href="/advancedsearchform">Advanced Search</a></button>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+            <a href="#" id="menu-icon"></a>
+            <ul>
+                {{#if authenticated}}
+                <li>
+                    <b>HELLO:</b>&nbsp;
+                    <a class="username" href="/profile/{{user.id}}">{{user.name}}</a>
+                </li>
+                <li>
+                    <a href="/CreateProposal">CREATE PROPOSAL</a>
+                </li>
+                <li>
+                    <a href="/logout">LOGOUT</a>
+                </li>
+
+                {{/if}} {{#unless authenticated}}
+                <li>
+                    <a href="/login">LOGIN</a>
+                </li>
+                <li>
+                    <a href="/signup">SIGNUP</a>
+                </li>
+                {{/unless}}
+
+
+                <li class="search">
+                    <form action="/search">
+                        <input id="searchtxt" type="text" name="projectname" placeholder="search By Name" />
+                    </form>
+                </li>
+                <li>
+                    
+                    <button style="background-color:#00BFFF;border-radius:5px">
+                        <a style="color:white;" href="/advancedsearchform">Advanced</a>
+                    </button>
+
+
+
+
+                 
+                </li>
+     
+            </ul>
+
+        </nav>
+
+      </div>
+
+   
+
+</header>

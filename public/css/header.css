@@ -1,15 +1,4 @@
 
-nav,footer {
-    height: 40px;
-    background-color: white;
-    padding: 0 0 10px 10px;
-    font-family: Righteous;
-   
-}
-nav a{
-    text-decoration:none;
-    color: #00BFFF;
-}
 
 .container {
     width: 1000px;  
@@ -17,6 +6,38 @@ nav a{
     margin: 0 auto;
     background-color:white;
 }
+.nav{
+    float:right;
+
+}
+nav,footer {
+    height: 35px;
+    background-color: white;
+    padding: 0 0 10px 10px;
+    font-family: Righteous;
+    margin-top: 18px;
+
+}
+nav a{
+    text-decoration:none;
+    color: #00BFFF;
+    font-weight: bold;
+}
+
+#menu-icon {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: url(/images/nav.png) center;
+  }
+  #menu-icon:hover {
+    border-radius: 4px 4px 0 0;
+  }
+  nav ul li a:hover {
+    color: #1ca51c;
+  }
+
+
 
 .sitename {
     color: #00BFFF;
@@ -25,6 +46,7 @@ nav a{
     font-family: Righteous;
     display: inline-block;
     text-decoration:none;
+    margin-bottom: 15px;
 }
 
 .logo {
@@ -74,29 +96,40 @@ nav div {
 
 
 
-  @media screen and (max-width: 580px) {
+  @media screen and (max-width: 930px) {
 
-  nav ul,
-  nav:active ul {
-    display: none;
-    z-index: 1000;
-    position: absolute;
-    padding: 20px;
-    background: #6991ac;
-    right: 20px;
-    top: 60px;
-    border: 1px solid #fff;
-    border-radius: 10px 0 10px 2px;
-    width: 50%;
-  }
+    #menu-icon {
+        display: inline-block;
+      }
+    
+      nav ul,
+      nav:active ul {
+        display: none;
+        z-index: 1000;
+        position: absolute;
+        padding: 20px 10px 10px;
+        background:#00BFFF;
+        right: 20px;
+        top: 60px;
+        border: 1px solid #fff;
+        border-radius: 10px 0 10px 2px;
+        width: 232px;
+      }
+    
+        nav li{
+            color:white !important;
+            display: block;
+            margin: 0px auto 20px;
+        }
+        nav li a{
+            color:white !important;
+        }
 
-  nav li {
-    text-align: center;
-    width: 100%;
-  }
-
-  nav:hover ul {
-    display: block;
-  }
+ 
+    
+      nav:hover ul {
+        display: block;
+      }
+    
 
 }

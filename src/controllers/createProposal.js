@@ -4,7 +4,9 @@ const createProposal = require('./../database/queries/createProposal');
 
 exports.get = (req, res) => {
   if (req.userAuth) {
-    res.render('createProposal', { js: 'createProposal', css: '/css/createProposal.css' });
+    res.render('createProposal', {
+      js: 'createProposal', css: '/css/createProposal.css', authenticated: req.userauthed, user: req.token,
+    });
   } else {
     res.redirect('/');
   }

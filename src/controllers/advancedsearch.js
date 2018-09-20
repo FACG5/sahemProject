@@ -3,6 +3,8 @@ const getAdvancedSearchedProjects = require('../database/queries/getAdvancedSear
 exports.getAdvancedSearchForm = (req, res) => {
   res.render('advancedsearch', {
     css: 'css/signup.css',
+    authenticated: req.userauthed,
+    user: req.token,
   });
 };
 
@@ -20,6 +22,8 @@ exports.getAdvancedSearchResults = (req, res) => {
         res.render('search', {
           css: 'css/home.css',
           getSearchedProjectsRes,
+          authenticated: req.userauthed,
+          user: req.token,
         });
       }
     },

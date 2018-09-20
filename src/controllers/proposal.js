@@ -6,7 +6,9 @@ exports.get = (req, res) => {
       return res.status('404').send('Page Not Found');
     }
     const obj = result.rows[0];
-    res.render('proposalDetails', { css: '/css/propsalDetails.css', js: '/js/proposalDetails.js', obj });
+    res.render('proposalDetails', {
+      css: '/css/propsalDetails.css', js: '/js/proposalDetails.js', obj, authenticated: req.userauthed, user: req.token,
+    });
   }).catch(() => {
     res.status(404).send('Page NOT Found');
   });

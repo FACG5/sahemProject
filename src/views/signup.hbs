@@ -1,7 +1,7 @@
 <h1 class="title">Sign UP</h1>
 <h3 class="msg">{{msg}}</h3>
 {{a}}
-<form action="/signup" method="POST">
+<form id="signupform" action="/signup" method="POST">
   <section class="containerr">
     <div class="clm">
       <div class="item">
@@ -65,7 +65,16 @@
       </div>
     </div>
     <div class="submitdiv">
-      <input class="item" type="submit" name="adduser" value="Sgin Up" id="signup">
+
+                <div class="type-1">
+                  <div>
+                    <a class="btn btn-1" href="javascript:{}" onclick="document.getElementById('signupform').submit();">
+                    <span class="txt">Sgin Up</span>
+                    <span class="round"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                  </div>
+                </div> 
+
       <br>
       <a class="signup-help" href="/login">Login</a>
     </div>

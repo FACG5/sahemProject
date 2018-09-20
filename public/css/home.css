@@ -13,16 +13,16 @@
 
 
 
-.popular nav {
+.popular .tape {
     background-color: #00BFFF;
-    height: 40px;
+    height: 60px;
     margin: 5px 0;
 }
 
-.popular nav h2 {
+.popular>.tape>h2 {
     color: #FFF;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
     margin-left: 21px;
     padding: 20px 0 0 0;
 }
