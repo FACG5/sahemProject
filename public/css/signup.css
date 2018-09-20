@@ -21,7 +21,7 @@
     margin:0 20px 0 0;
 }
 
-.clm>.item>input[type=text], [type=email],[type=password],[type=tel],textarea {
+.clm>.item>input, .clm>.item>select{
     width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -68,3 +68,17 @@
     text-align: center;
     font-size: 12px;
   }
+
+  .popular .tape {
+    background-color: #00BFFF;
+    height: 60px;
+    margin: 5px 0;
+}
+
+.popular>.tape>h2 {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 21px;
+    padding: 20px 0 0 0;
+}

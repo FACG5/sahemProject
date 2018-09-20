@@ -5,14 +5,12 @@ const getAdvancedSearchedProjects = (searchParams, cb) => {
 //     text: "SELECT projects.*, users.name as ownername, users.location, users.id as userid FROM projects inner join users on projects.user_id = users.id where projects.field = '$1' and projects.fund <= '$2' and projects.fund >= '$3';",
 //     Values: [searchParams.sector, searchParams.maxfund, searchParams.minfund],
 //   };
-const sql = "SELECT projects.*, users.name as ownername, users.location, users.id as userid FROM projects inner join users on projects.user_id = users.id where projects.field = '"+searchParams.sector + "' and projects.fund <= '"+ searchParams.maxfund +"' and projects.fund >= '"+ searchParams.minfund +"';";
+  const sql = `SELECT projects.*, users.name as ownername, users.location, users.id as userid FROM projects inner join users on projects.user_id = users.id where projects.field = '${searchParams.sector  }' and projects.fund <= '${ searchParams.maxfund }' and projects.fund >= '${ searchParams.minfund }';`;
 
   dbconnection.query(sql, (err, res) => {
     if (err) {
-        console.log(err)
       cb(err);
     } else {
-        console.log(res.rows)
       cb(null, res.rows);
     }
   });

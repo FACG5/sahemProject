@@ -1,25 +1,43 @@
-<h1>Advanced Search</h1>
-<h3 class="msg">{{msg}}</h3>
-<Form action="/advancedsearchresults">
-    <section class="containerr">
-        <div class="clm">
-            <div class="item">
-                <label for="sector">Sector</label>
-                <select name="sector" id="sector">
-                    <option value="Industrial">Industrial</option>
-                    <option value="Agricultural">Agricultural</option>
-                    <option value="IT">IT</option>
-                </select>
+<section class="popular">
+    <div class="tape">
+        <h2>Advanced Search</h2>
+    </div>
+    <h3 class="msg">{{msg}}</h3>
+    <Form id="advancedsearchform" action="/advancedsearchresults">
+        <section class="containerr">
+            <div class="clm">
+                <div class="item">
+                    <label for="sector">Sector</label>
+                    <select name="sector" id="sector">
+                        <option value="Industrial">Industrial</option>
+                        <option value="Agricultural">Agricultural</option>
+                        <option value="IT">IT</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <label for="maxfund">Maximum Fund</label>
+                    <input type="number" id="maxfund" name="maxfund">
+                </div>
+                <div class="item">
+                    <label for="minfund">Minimum Fund</label>
+                    <input type="number" id="minfund" name="minfund">
+                </div>
+            
+              <div class="item">
+                    <label ></label>
+                </div>
+
+                   <div class="type-1">
+                  <div>
+                    <a class="btn btn-1" href="javascript:{}" onclick="document.getElementById('advancedsearchform').submit();">
+                    <span class="txt">Search</span>
+                    <span class="round"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                  </div>
+                </div>  
+     
+
             </div>
-            <div class="item">
-                <label for="maxfund">Maximum Fund</label>
-                <input type="number" id="maxfund" name="maxfund">
-            </div>
-            <div class="item">
-                <label for="minfund">Minimum Fund</label>
-                <input type="number" id="minfund" name="minfund">
-            </div>
-            <input type="submit" value="Search">
-        </div>
-    </section>
-</Form>
+        </section>
+    </Form>
+</section>

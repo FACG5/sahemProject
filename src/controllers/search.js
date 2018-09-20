@@ -10,6 +10,8 @@ exports.get = (req, res) => {
       res.render('search', {
         css: 'css/home.css',
         getSearchedProjectsRes,
+        authenticated: req.userauthed,
+        user: req.token,
       });
     }
   });

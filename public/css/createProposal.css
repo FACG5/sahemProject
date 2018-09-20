@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.container span {
+.errName-span>span{
   min-width: 145px;
   margin-left: 30px;
 }
