@@ -29,7 +29,7 @@ Creating a website that grants creative people the opportionity to create and pr
 ---
 
 ### Database schema:
-[](https://files.gitter.im/gazaskygeeks/Fundraiser-Platform/dD57/schema.png)
+![Image of schema](https://files.gitter.im/gazaskygeeks/Fundraiser-Platform/dD57/schema.png)
 
 ---
 
