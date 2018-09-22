@@ -1,7 +1,7 @@
 <h1 class="title">Sign UP</h1>
 <h3 class="msg">{{msg}}</h3>
 {{a}}
-<form id="signupform" action="/signup" method="POST">
+<form id="signupform" enctype='multipart/form-data' action="/signup" method="POST">
   <section class="containerr">
     <div class="clm">
       <div class="item">
@@ -53,7 +53,7 @@
       </div>
       <div class="item">
         <label for="img">Image</label>
-        <input type="text" name="img" id="img" required>
+        <input type="file" name="imageURL" id="img" required>
         <p id="imgerr" class="errorValid"></p>
       </div>
     </div>
