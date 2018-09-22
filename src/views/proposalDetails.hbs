@@ -1,8 +1,8 @@
 <main class="wrapper">
   <section class="main">
     <div class="userDetails">
-      <img src="https://i.ebayimg.com/thumbs/images/g/6IIAAOSwiMRbGn2S/s-l96.jpg" class="userImg" alt="">
-      <span class="userName">{{obj.username}}</span>
+      <img src="{{obj.userimg}}" class="userImg" alt="">
+      <span class="userName"><a href="/profile/{{obj.user_id}}">{{obj.username}}</a></span>
     </div>
     <h3 class="title">{{obj.projectname}}</h3>
     <p class="abstract">
