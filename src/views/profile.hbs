@@ -1,10 +1,10 @@
-
-{{#each response}}
+ {{#each response}}
 
 <div class="container2">
     <div class="left">
         <div class="image">
-            <img class="imgprofile" src="{{this.img}}" alt="personalImage" /> </div>
+            <img class="imgprofile" src="{{this.img}}" alt="personalImage" />
+        </div>
         <div class="social">
             <a class="link" href="{{this.email}}">
                 <img src="/images/email.png" alt="email pic" />
@@ -33,12 +33,12 @@
             <h3 class="line">Specification:</h3>
             <h3>{{this.spec}}</h3>
         </div>
-    
-       <div class="about">
-            <h2 class="name">About Me:</h2>
-            <h3>{{this.description}}</h3>
+
+        <div class="about">
+            <h3 class="name">About Me:</h3>
+            <p>{{this.description}}</p>
         </div>
 
     </div>
-</div> 
+</div>
 {{/each}}
