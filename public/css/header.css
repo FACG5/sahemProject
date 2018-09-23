@@ -28,7 +28,8 @@ nav a{
     display: none;
     width: 40px;
     height: 40px;
-    background: url(/images/nav.png) center;
+    color: #1ca51c;
+    font-size: 30px;
   }
   #menu-icon:hover {
     border-radius: 4px 4px 0 0;
