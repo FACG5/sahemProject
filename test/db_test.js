@@ -3,6 +3,9 @@ const checkUser = require('../src/database/queries/checkUser');
 const db_build = require('../src/database/db_build');
 const getProfile = require('../src/database/queries/getProfile');
 const addUser = require('../src/database/queries/addUser');
+const getPopularProjects = require('../src/database/queries/getPopularprojects');
+const getSearchedProjects = require('../src/database/queries/getSearchedProjects');
+
 
 tape('Check Email Not Found', (t) => {
   db_build((err, res) => {
@@ -145,3 +148,31 @@ tape('Testing Data Type of Occupation Field', (t) => {
     });
   });
 });
+
+tape('Testing Data When get data from projects table', (t) => {
+  db_build((err, res) => {
+    getPopularProjects((err, res) => {
+      t.ok(res.length > 0, true, ' Should Return Name Field');
+      t.end();
+    });
+  });
+});
+
+tape('Testing type of data to res getPopularProjects', (t) => {
+  db_build((err, res) => {
+    getPopularProjects((err, res) => {
+      t.equal(typeof (res), 'object', ' Should Return Name Field');
+      t.end();
+    });
+  });
+});
+
+tape('Testing search project name not found', (t) => {
+  db_build((err, res) => {
+    getSearchedProjects('sssss', (err, res) => {
+      t.equal(res.length, 0, 'should return number');
+      t.end();
+    });
+  });
+});
+
